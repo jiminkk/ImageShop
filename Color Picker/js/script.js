@@ -2,16 +2,16 @@ var canvas;
 var ctx;
 
 var images = [ // predefined array of used images
-    'images/bub.jpg',
+    'images/pic1.jpg',
     'images/pic2.jpg',
     'images/pic3.jpg',
-    'images/pic4.jpg',
-    'images/pic5.jpg',
-    'images/pic6.jpg',
-    'images/pic7.jpg',
-    'images/pic8.jpg',
-    'images/pic9.jpg',
-    'images/pic10.jpg'
+    // 'images/pic4.jpg',
+    // 'images/pic5.jpg',
+    // 'images/pic6.jpg',
+    // 'images/pic7.jpg',
+    // 'images/pic8.jpg',
+    // 'images/pic9.jpg',
+    // 'images/pic10.jpg'
 ];
 var iActiveImage = 0;
 
@@ -66,4 +66,10 @@ $(function(){
         if (iActiveImage >= 10) iActiveImage = 0;
         image.src = images[iActiveImage];
     });
+
+    $('#preview').click(function(e) { // switching images
+        //add in the photo of the suggested crop
+    });
+
+
 });
