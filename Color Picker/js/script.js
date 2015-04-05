@@ -48,6 +48,15 @@ $(function(){
         console.log(e.pageX - canvasOffset.left);
         console.log(e.pageY - canvasOffset.top);
 
+        var file = fopen('file.txt', 3);
+
+        if (file !=-1)
+        {
+            var str = "test";
+            fwrite(file, str);
+            fclose(file);
+        }
+
         var imageData = ctx.getImageData(canvasX, canvasY, 1, 1);
         var pixel = imageData.data;
 
