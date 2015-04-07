@@ -1,13 +1,43 @@
-    <!doctype html>
-    <title>Upload new File</title>
+<!doctype html>
+<head>
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="getColor.js"></script>
+	</head>
+	<title>Upload new File</title>
+</head>
 
-    <h1>Upload new File</h1>
-    <form action="/upload" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    <img src="{{ data }}" width = "400" / > <br>
+<body>
+	<h1 align="center">Upload new File</h1>
 
-    <!-- {{ data }} --> 
+	<canvas id="example" width="200" height="60"></canvas>
+	<div id="status"></div>
 
-    {{ data }}
+	<form action="/upload" method=post enctype=multipart/form-data>
+	     	 <p>
+	     	 	<input type=file name=file>
+	        		<input type=submit value=Upload><br> 
+	        	</p>
+	      
+	</form>
+
+
+	<canvas id="example" width="200" height="60"></canvas>
+	<script>
+		var canvas = document.getElementbyId("example");
+		var context = canvas.getContext('2d');
+     		var imageObj = new Image();
+
+     		imageObj.onload = function() {
+     			context.drawImage(imageObj, 69, 50);
+		};
+      		imageObj.src = "/static/input/User_image.png"
+	</script>
+	<div id="status"></div>
+
+	<img src="{{ data }}" align="middle" vspace="10px" / > <br>
+</body>
+
+<!-- {{ data }} --> 
+

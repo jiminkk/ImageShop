@@ -7,7 +7,7 @@ from flask import render_template
 from PIL import Image
 
 
-UPLOAD_FOLDER = os.getcwd()+"/input/"
+UPLOAD_FOLDER = os.getcwd()+"/static/input/"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
@@ -42,6 +42,14 @@ def upload_file():
              #             	filename=filename))
     return render_template('index.html')
 
+@app.route('/Get-Pixel', methods=['GET','POST'])
+def pixel_selection():
+    if request.method == 'POST':
+        file = request.method['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            #Image im = Image.open("/static/input/User_image." + file.filename.rsplit('.',1)[1]))
+            #for i in range(im.)
 
 if __name__ == "__main__":
     app.run(debug=True)
